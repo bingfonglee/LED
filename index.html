@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED燈條模擬器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>LED燈條模擬器</h1>
+        
+        <div class="led-strip">
+            <!-- 12個LED燈 -->
+            <div class="led" data-led="1"></div>
+            <div class="led" data-led="2"></div>
+            <div class="led" data-led="3"></div>
+            <div class="led" data-led="4"></div>
+            <div class="led" data-led="5"></div>
+            <div class="led" data-led="6"></div>
+            <div class="led" data-led="7"></div>
+            <div class="led" data-led="8"></div>
+            <div class="led" data-led="9"></div>
+            <div class="led" data-led="10"></div>
+            <div class="led" data-led="11"></div>
+            <div class="led" data-led="12"></div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <div class="mode-label">燈效模式：</div>
+                <div class="mode-buttons">
+                    <button class="mode-btn active" data-mode="running">跑馬燈</button>
+                    <button class="mode-btn" data-mode="waterflow">流水效果</button>
+                    <button class="mode-btn" data-mode="warning">警告閃燈</button>
+                    <button class="mode-btn" data-mode="random">隨機閃爍</button>
+                    <button class="mode-btn" data-mode="centerSpread">中心擴散</button>
+                    <button class="mode-btn" data-mode="sidesFocus">兩側集中</button>
+                    <button class="mode-btn" data-mode="idle">IDLE模式</button>
+                    <button class="mode-btn" data-mode="heartbeat">心跳效果/呼吸燈</button>
+                    <button class="mode-btn" data-mode="meteor">流星效果</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>速度：</label>
+                <input type="range" id="speed" min="1" max="10" value="5">
+                <span id="speedDisplay">0.5秒</span>
+            </div>
+
+            <div class="control-group">
+                <label>亮度：</label>
+                <input type="range" id="brightness" min="0" max="100" value="100">
+                <span id="brightnessDisplay">100%</span>
+            </div>
+
+            <div class="control-group" id="fadeRangeGroup" style="display: none;">
+                <label>漸層範圍：</label>
+                <input type="range" id="fadeRange" min="0" max="100" value="70">
+                <span id="fadeRangeDisplay">70%</span>
+            </div>
+
+            <div class="control-group">
+                <label>顏色：</label>
+                <input type="color" id="ledColor" value="#ff0000">
+            </div>
+
+            <div class="buttons">
+                <button id="startBtn">開始</button>
+                <button id="stopBtn">停止</button>
+                <button id="resetBtn">重置</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
